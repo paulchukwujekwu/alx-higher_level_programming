@@ -1,8 +1,13 @@
 #!/usr/bin/python3
+def to_uper(character):
+    if ord(character) >= 97 and ord(character) <= 122:
+        return (ord(character) - 32)
+    else:
+        return ord(character)
+
+
 def uppercase(str):
-    for iterator in str:
-        temp = iterator
-        if ord(temp) >= 97 and ord(temp) <= 122:
-            temp = chr(ord(iterator) - 32)
-            print("{}".format(temp), end='')
-    print()
+    new = ""
+    for character in str:
+        new += "%c" % to_uper(character)
+    print("{:s}".format(new))
